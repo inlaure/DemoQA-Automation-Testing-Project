@@ -35,7 +35,7 @@ Packages:
 Files:
 
 * end-processes - Used in AfterMethod to end all processes in the background
-* pom.xml - Contains all dependencies used in the project (last updated: 05.02.2024.)
+* pom.xml - Contains all dependencies used in the project (last updated: 05/02/2024)
 * AppData.xlsx - Excel file used to read some data for DDT as an alternative
 * .gitignore - File used to store all items that are not pushed to github
 
@@ -48,4 +48,4 @@ Files:
 ## Other
 * Test methods are kept clean
 * Each test should have at least 2 assertions with few test exceptions
-* Priorities are set with 10 increment, if higher priority occur later in testing, priority of such tests are placed between the two priorities
+* Priorities are set with an increment of 10. If higher priority occurs later in testing, the priority of such a test is placed between two priorities
