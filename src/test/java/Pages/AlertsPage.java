@@ -29,13 +29,16 @@ public class AlertsPage extends BaseTest {
     public void clickOnAlertButton(){
         alertButton.click();
     }
+
     public void clickOnTimerAlertButton(){
         timerAlertButton.click();
-        setAsyncTimeout(5);
+        setAsyncTimeout(5); //Async Timeout is implemented as the alert shows up only 5 seconds after the open button is clicked
     }
+
     public void clickOnConfirmButton(){
         confirmButton.click();
     }
+
     public void clickOnPromptButton(){
         promptButton.click();
     }
