@@ -8,7 +8,7 @@ ToolsQA is a website for testing purposes where the main goal is to test as many
 ## Installation
 * Open terminal in IDE and git clone the repository
 
-```git clone https://github.com/DragoljubQA/SauceDemo.git```
+```git clone https://github.com/inlaure/DemoQA-Automation-Testing-Project.git```
 * java version "21" 2023-09-19 LTS
 * Apache Maven 3.9.5
 
