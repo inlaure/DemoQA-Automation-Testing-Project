@@ -26,20 +26,23 @@ public class BookPage extends BaseTest {
         return title.findElement(By.id("userName-value")).getText();
     }
 
+
+    //A chosen book is added to collection
     public void clickOnAddToCollection() {
         for (int i = 0; i < buttons.size(); i++) {
             if (buttons.get(i).getText().equals("Add To Your Collection")) {
-                scrollToElement(buttons.get(i));
+                scrollToElement(buttons.get(i));//Button is outside the viewport
                 buttons.get(i).click();
                 break;
             }
         }
     }
 
+    //User returns to book store
     public void clickOnBackToBookStore() {
         for(int i = 0; i < buttons.size(); i++) {
             if (buttons.get(i).getText().equals("Back To Book Store")) {
-                scrollToElement(buttons.get(i));
+                scrollToElement(buttons.get(i));//Button is outside the viewport
                 buttons.get(i).click();
                 break;
             }
