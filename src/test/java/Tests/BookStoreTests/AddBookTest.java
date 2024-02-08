@@ -29,8 +29,8 @@ public class AddBookTest extends BaseTest {
         booksPage = new BooksPage();
         bookPage = new BookPage();
 
-        String validUsername = reader.getStringData("Login", 1, 0);
-        String validPassword = reader.getStringData("Login", 1, 1);
+        String validUsername = reader.getStringData("Login", 2, 0);
+        String validPassword = reader.getStringData("Login", 2, 1);
         loginPage.inputUsername(validUsername);
         loginPage.inputPassword(validPassword);
         loginPage.clickOnLoginButton();
@@ -44,10 +44,9 @@ public class AddBookTest extends BaseTest {
         booksPage.clickOnAnyBook();
         String bookToBeAdded = bookPage.titleName();
         bookPage.clickOnAddToCollection();
-//        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-//        driver.switchTo().alert();
-//        alert.accept();
-        acceptAlert();
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert();
+        alert.accept();
         driver.navigate().refresh();
         sideBarPage.clickOnItem("Profile");
         Assert.assertEquals(profilePage.booksInProfile.getFirst().getText(), bookToBeAdded);
