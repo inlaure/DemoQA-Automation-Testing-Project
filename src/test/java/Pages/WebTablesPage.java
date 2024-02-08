@@ -59,53 +59,67 @@ public class WebTablesPage extends BaseTest {
     public void clickOnAddRecordButton(){
         addRecordButton.click();
     }
+
     public void clickOnSubmitFormButton(){
         submitFormButton.click();
     }
+
     public void inputFirstName(String firstname){
         firstnameField.clear();
         firstnameField.sendKeys(firstname);
     }
+
     public void inputLastName(String lastname){
         lastnameField.clear();
         lastnameField.sendKeys(lastname);
     }
+
     public void inputEmail(String email){
         emailField.clear();
         emailField.sendKeys(email);
     }
+
     public void inputAge(String age){
         ageField.clear();
         ageField.sendKeys(age);
     }
+
     public void inputSalary(String salary){
         salaryField.clear();
         salaryField.sendKeys(salary);
     }
+
     public void inputDepartment(String department){
         departmentField.clear();
         departmentField.sendKeys(department);
     }
+
     public void inputSearch(String str){
         searchBoxField.clear();
         searchBoxField.sendKeys(str);
     }
+
     public WebElement getTotalPageNumber(){
         return this.totalPageNumber();
     }
+
     public int totalPagesNum() {
         setAsyncTimeout(1);
         return Integer.parseInt(getTotalPageNumber().getText().trim());
     }
+
     public int pageInputValue(){
        return Integer.parseInt(currentPage.getAttribute("value"));
     }
+
     public void clickOnNextButton(){
         clickOnElement(controlButtons.get(1));
     }
+
     public void clickOnPreviousButton(){
         clickOnElement(controlButtons.getFirst());
     }
+
     public void deleteAllRecords(){
         if(!deleteButtons.isEmpty()){
             for(int i = deleteButtons.size() - 1; i>=0; i--){
@@ -113,6 +127,7 @@ public class WebTablesPage extends BaseTest {
             }
         }
     }
+
     public int clickOnAnyActionButton(List<WebElement> buttons){
         int randomNum = generateRandomNumber(buttons.size());
         if(!buttons.isEmpty()){
@@ -125,6 +140,8 @@ public class WebTablesPage extends BaseTest {
         }
         return randomNum;
     }
+
+    //Method counts how many cells in Excel file contain string entered in search box
     public int numOfCellsContainingSearchInput(ExcelReader reader, String str){
         int cellCounter = 0;
         for (int i = 1; i <= reader.getLastRow("AddRecords"); i++) {
@@ -140,6 +157,8 @@ public class WebTablesPage extends BaseTest {
         System.out.println(cellCounter);
         return cellCounter;
     }
+
+    //Method counts how many cells in table contain string entered in search box
     public int numOfRecordsContainingSearchInput(String str){
         int recordCounter = 0;
         for (int i = 0; i < recordCells.size(); i++) {
@@ -151,6 +170,8 @@ public class WebTablesPage extends BaseTest {
 
         return recordCounter;
     }
+
+    //New records are added to table until 3 pages of records are displayed
     public void addSomeRecordsToTable(ExcelReader reader){
         for(int i = 1; i<=reader.getLastRow("AddRecords"); i++) {
             clickOnAddRecordButton();
@@ -169,6 +190,9 @@ public class WebTablesPage extends BaseTest {
             clickOnSubmitFormButton();
         }
     }
+
+    //Records are added to table until 3 pages of records are displayed
+    //It is done to enable previous and next buttons
     public void addRecordsToTable(ExcelReader reader) {
         int i = 1;
         while(totalPagesNum() < 3){

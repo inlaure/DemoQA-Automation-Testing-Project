@@ -44,9 +44,10 @@ public class AddBookTest extends BaseTest {
         booksPage.clickOnAnyBook();
         String bookToBeAdded = bookPage.titleName();
         bookPage.clickOnAddToCollection();
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        driver.switchTo().alert();
-        alert.accept();
+//        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+//        driver.switchTo().alert();
+//        alert.accept();
+        acceptAlert();
         driver.navigate().refresh();
         sideBarPage.clickOnItem("Profile");
         Assert.assertEquals(profilePage.booksInProfile.getFirst().getText(), bookToBeAdded);

@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.util.List;
-import java.util.Random;
 
 public class RadioButtonPage extends BaseTest {
 
@@ -25,6 +24,7 @@ public class RadioButtonPage extends BaseTest {
         return successMessage.getText();
     }
 
+    //Random radio button is clicked each time and its text is returned
     public String clickOnAnyRadioButton(){
         String text = "";
         int randomNum = generateRandomNumber(radioButtons.size()-1);

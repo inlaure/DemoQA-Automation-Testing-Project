@@ -11,7 +11,6 @@ public class RegisterPage extends BaseTest {
         PageFactory.initElements(driver, this);
     }
 
-
     @FindBy(id = "firstname")
     public WebElement firstnameField;
 
@@ -36,6 +35,7 @@ public class RegisterPage extends BaseTest {
         firstnameField.clear();
         firstnameField.sendKeys(firstName);
     }
+
     public void inputLastName(String lastName){
         lastnameField.clear();
         lastnameField.sendKeys(lastName);

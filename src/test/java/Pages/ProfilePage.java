@@ -27,6 +27,7 @@ public class ProfilePage extends BaseTest {
     public WebElement searchBoxField;
 
     //--------------------------------------------
+
     public String userNameValue(){
         return loggedInUserValue.getText();
     }
@@ -35,6 +36,8 @@ public class ProfilePage extends BaseTest {
         searchBoxField.clear();
         searchBoxField.sendKeys(str);
     }
+
+    //All four buttons on profile page have the same id
     public void clickOnButton(String str) {
         for (int i = 0; i < profileButtons.size(); i++) {
             if (profileButtons.get(i).getText().equals(str)) {
@@ -43,6 +46,8 @@ public class ProfilePage extends BaseTest {
             }
         }
     }
+
+    //Method return selected button whose title is set as an argument
     public WebElement findButton(String str){
         WebElement selectedElement = profileButtons.getFirst();
         for(int i = 0;i<profileButtons.size(); i++){
@@ -66,9 +71,11 @@ public class ProfilePage extends BaseTest {
             }
         }
     }
+
     public void clickOnOk() {
         okButton.click();
     }
+
     public int deleteAnyBook(){
         int randomNum = generateRandomNumber(deleteButtons.size());
             for(int i = 0; i<deleteButtons.size(); i++){

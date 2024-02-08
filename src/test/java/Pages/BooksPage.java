@@ -23,11 +23,14 @@ public class BooksPage extends BaseTest {
 
     //-------------------------
 
+    //Adding a random book to profile
     public void clickOnAnyBook(){
         int randomNumber = generateRandomNumber(books.size());
         scrollToElement(books.get(randomNumber));
         books.get(randomNumber).click();
     }
+
+    //Adding multiple books to profile
     public void addBooks(){
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         sideBarPage = new SideBarPage();

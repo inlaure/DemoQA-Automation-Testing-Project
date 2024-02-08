@@ -14,6 +14,7 @@ public class SideBarPage extends BaseTest {
 
     @FindBy(className = "text")
     public List<WebElement> cardItems;
+
     public void clickOnItem(String str){
         for(int i =0; i<cardItems.size();i++){
             if(cardItems.get(i).getText().equals(str)){

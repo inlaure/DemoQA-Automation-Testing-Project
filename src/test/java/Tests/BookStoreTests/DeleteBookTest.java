@@ -31,14 +31,13 @@ public class DeleteBookTest extends BaseTest {
         loginPage.inputUsername(validUsername);
         loginPage.inputPassword(validPassword);
         loginPage.clickOnLoginButton();
-
-        if(profilePage.booksInProfile.isEmpty()){
-            booksPage.addBooks();
-        }
     }
 
     @Test(priority = 10)
     public void userCanDeleteAnyBook() {
+        if(profilePage.booksInProfile.isEmpty()){
+            booksPage.addBooks();
+        }
         Assert.assertFalse(profilePage.booksInProfile.isEmpty());
         int numOfBooksBeforeDelete = profilePage.booksInProfile.size();
         int deletedBookIndex = profilePage.deleteAnyBook();
@@ -54,6 +53,9 @@ public class DeleteBookTest extends BaseTest {
 
     @Test(priority = 20)
     public void userCanDeleteAllBooks() {
+        if(profilePage.booksInProfile.isEmpty()){
+            booksPage.addBooks();
+        }
         Assert.assertFalse(profilePage.booksInProfile.isEmpty());
         profilePage.clickOnDeleteAllBooks();
         profilePage.clickOnOk();

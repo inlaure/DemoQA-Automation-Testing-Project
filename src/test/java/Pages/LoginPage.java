@@ -20,20 +20,24 @@ public class LoginPage extends BaseTest {
     public WebElement loginButton;
     @FindBy(id = "newUser")
     public WebElement addNewUserButton;
+
+    //Error message container
     @FindBy(id = "name")
     public WebElement error;
+
+    //When fields are empty, their borders turn red
     @FindBy(css = ".mr-sm-2.is-invalid.form-control")
     public List<WebElement> invalidFields;
 
 
     //-------------------------
 
-    public void inputUsername(String username){
+    public void inputUsername(String username){//This method accepts username which is inserted through Excel file
         usernameField.clear();
         usernameField.sendKeys(username);
     }
 
-    public void inputPassword(String password){
+    public void inputPassword(String password){//This method accepts password which is inserted through Excel file
         passwordField.clear();
         passwordField.sendKeys(password);
     }
