@@ -2,7 +2,7 @@
 ToolsQA is a website for testing purposes where the main goal is to test as many various functionalities as possible.
 ## Dependencies
 * Run on Windows 10 OS
-* IDE for this project is IntelliJ Idea Community Edition 2023.2.2
+* IDE for this project is IntelliJ IDEA 2023.3.2 (Community Edition)
 * Browsers needed is Chrome as mandatory but also preferred are Firefox, Edge and Safari
 
 ## Installation
